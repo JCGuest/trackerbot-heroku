@@ -1,0 +1,28 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  port: 5432
+
+
+development:
+  <<: *default
+  database: trackerbot_development
+  username: trackerbot
+  password: herbalife24
+
+
+test:
+  <<: *default
+  database: trackerbot_test
+  username: trakcerbot
+  password: herbalife24
+
+
+production:
+  <<: *default
+  database: trackerbot_production
+  username: trackerbot
+  password: herbalife24
