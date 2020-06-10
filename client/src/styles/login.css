@@ -6,6 +6,11 @@ form {
 
 body {
     background-color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -16,10 +21,10 @@ body {
     margin: 4rem auto 1rem;
 }
 
-.label {
+/* .label {
     color: var(--text-color);
     font-size: 1.2rem;
-}
+} */
 
 .input {
     outline: none;
@@ -52,7 +57,7 @@ input:invalid {
     background: #d16dff;
     transform: scaleX(0);
     transform-origin: 0%;
-    transition: transform 500ms ease;
+    transition: transform 1000ms ease;
     top: 2px;
 }
 
