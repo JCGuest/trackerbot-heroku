@@ -18,11 +18,11 @@ test:
   <<: *default
   database: trackerbot_test
   username: trakcerbot
-  password: herbalife24
+  password: <%= ENV['TRACKERBOT_DB_PASSWORD'] %>
 
 
 production:
   <<: *default
   database: trackerbot_production
   username: trackerbot
-  password: herbalife24
+  password: <%= ENV['TRACKERBOT_DB_PASSWORD'] %>
