@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/login', to: 'sessions#new'
+  post '/sessions', to: 'sessions#create', as: "sessions"
+  get '/logout', to: 'sessions#destroy'
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/sessions', to: 'sessions#new'
+  get 'clerks', to: 'clerks#new'
+
 end
