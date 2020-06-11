@@ -2,10 +2,19 @@ import React from 'react';
 import Login from './components/Login';
 import Home from './components/Home';
 import Signup from './components/Signup';
+import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App(props) {
-  return (
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+      user: {}
+    };
+  }
+  render() {
+    return (
     <div>
       <Router>
         <Switch>
@@ -15,7 +24,8 @@ function App(props) {
        </Switch>
     </Router>
     </div>
-  );
-};
+    )
+  }
+}
 
 export default App;
