@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
       session[:user_id] = @user.id
     end
   def logged_in?
+    # byebug
       !!session[:user_id]
     end
   def current_user
