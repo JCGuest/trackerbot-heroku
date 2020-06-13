@@ -33,7 +33,8 @@ export default class Login extends React.Component {
         axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
         .then(resp => {
             if (resp.data.logged_in) {
-                this.props.handleLogin(resp.data)
+                // this.props.handleLogin(resp.data)
+                this.props.loginUser(true, resp.user)
                 this.redirect()
             } else {
                 this.setState({
@@ -45,7 +46,7 @@ export default class Login extends React.Component {
     };
 
     redirect = () => {
-        this.props.history.push('/')
+        this.props.history.push('/query')
     };
 
     handleErrors = () => {

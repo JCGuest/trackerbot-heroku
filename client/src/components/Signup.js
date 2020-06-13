@@ -34,7 +34,8 @@ export default class Signup extends React.Component {
         axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
         .then(resp => {
             if (resp.data.status === 'created') {
-                this.props.handleLogin(resp.data)
+                // this.props.handleLogin(resp.data)
+                this.props.loginUser(true, resp.user)
                 this.redirect()
             } else {
                 this.setState({
@@ -46,7 +47,7 @@ export default class Signup extends React.Component {
       };
 
       redirect = () => {
-          this.props.history.push('/')
+          this.props.history.push('/query')
       };
 
       handleErrors = () => {
@@ -64,7 +65,7 @@ export default class Signup extends React.Component {
         return (
         <main>
             <div className='logo'>
-                <h4>>_TRACKERBOT</h4>
+                <h4>{'>_TRACKERBOT'}</h4>
             </div>
 
 	        <form onSubmit={this.handleSubmit}>
