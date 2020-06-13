@@ -4,7 +4,7 @@ import axios from 'axios';
 const QueryContainer = (props) =>  {
 
     function logout() {
-        axios.get('http://localhost:3001/logged_in', {}, 
+        axios.post('http://localhost:3001/logout', {}, 
         {withCredentials: true})
         .then(resp => props.logoutUser(false, {}))
         .then(redirect())

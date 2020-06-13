@@ -35,7 +35,7 @@ export default class Signup extends React.Component {
         .then(resp => {
             if (resp.data.status === 'created') {
                 // this.props.handleLogin(resp.data)
-                this.props.loginUser(true, resp.user)
+                this.props.loginUser(true, resp.data.user)
                 this.redirect()
             } else {
                 this.setState({

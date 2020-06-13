@@ -36,7 +36,7 @@ class Routes extends React.Component {
     .then(response => {
       if (response.data.logged_in !== false) {
         // this.handleLogin(response)
-        this.props.loginUser(true, response.user)
+        this.props.loginUser(true, response.data.user)
       } else {
         // this.handleLogout()
         this.props.logoutUser(false, {})

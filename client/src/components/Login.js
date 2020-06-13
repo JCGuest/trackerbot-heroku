@@ -34,7 +34,7 @@ export default class Login extends React.Component {
         .then(resp => {
             if (resp.data.logged_in) {
                 // this.props.handleLogin(resp.data)
-                this.props.loginUser(true, resp.user)
+                this.props.loginUser(true, resp.data.user)
                 this.redirect()
             } else {
                 this.setState({
