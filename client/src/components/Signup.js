@@ -34,7 +34,6 @@ export default class Signup extends React.Component {
         axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
         .then(resp => {
             if (resp.data.status === 'created') {
-                // this.props.handleLogin(resp.data)
                 this.props.loginUser(true, resp.data.user)
                 this.redirect()
             } else {
