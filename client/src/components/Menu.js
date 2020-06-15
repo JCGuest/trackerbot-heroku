@@ -5,7 +5,6 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 // import SearchContainer from '../containers/SearchContainer'
 import '../styles/login.css';
-import { BrowserRouter as Router} from 'react-router-dom'
 import Logo from './Logo'
 
 const Menu = (props) => {

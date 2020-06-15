@@ -2,6 +2,7 @@ import React from 'react'
 // import '../styles/login.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Logo from './Logo'
  
 export default class Login extends React.Component {
 
@@ -63,9 +64,7 @@ export default class Login extends React.Component {
     render() {
         return (
         <main>
-            <div className='logo'>
-                >_TRACKERBOT
-            </div>
+            <Logo/>
 
             <form onSubmit={this.handleSubmit}>
                 <div className="field">

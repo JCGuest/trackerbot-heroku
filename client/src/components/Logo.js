@@ -4,7 +4,7 @@ const Logo = (props) => {
 
     return (
         <div className='logo'>
-             >_TRACKERBOT
+             >_trackerbot
         </div>
     )
 };
