@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/login.css'
+// import '../styles/login.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
  
@@ -45,7 +45,7 @@ export default class Login extends React.Component {
     };
 
     redirect = () => {
-        this.props.history.push('/query')
+        this.props.history.push('/menu')
     };
 
     handleErrors = () => {
@@ -64,7 +64,7 @@ export default class Login extends React.Component {
         return (
         <main>
             <div className='logo'>
-                <h4>>_TRACKERBOT</h4>
+                >_TRACKERBOT
             </div>
 
             <form onSubmit={this.handleSubmit}>

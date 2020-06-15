@@ -46,7 +46,7 @@ export default class Signup extends React.Component {
       };
 
       redirect = () => {
-          this.props.history.push('/query')
+          this.props.history.push('/nav')
       };
 
       handleErrors = () => {
