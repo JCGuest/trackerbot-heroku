@@ -1,9 +1,13 @@
 import React from 'react';
+import Logo from '../components/Logo'
+import Navbar from '../components/Navbar'
 
 const SearchContainer = (props) => {
     return (
-        <div className='logo'>
-            {props.user.username}
+        <div>
+            <Logo/>
+            <Navbar/>
+            <div className='logo'>SearchContainer</div>
         </div>
     )
 

@@ -1,30 +1,20 @@
 import React from 'react';
-import Login from '../components/Login';
-import Home from '../components/Home';
-import Signup from '../components/Signup';
+// import Login from '../components/Login';
+// import Home from '../components/Home';
+// import Signup from '../components/Signup';
 import Navbar from '../components/Navbar';
-import SearchContainer from '../containers/SearchContainer'
+// import SearchContainer from '../containers/SearchContainer'
 import '../styles/login.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
+import { BrowserRouter as Router} from 'react-router-dom'
+import Logo from './Logo'
 
 const Menu = (props) => {
-
+// debugger 
     return (
         <div>
-            <div className='logo'>
-                >_TRACKERBOT
-            </div>
-        <div>
-        <Router>
-        <Navbar logoutUser={props.logoutUser}/>
-            <Switch>
-                <Route exact path="/enter_item" render={ props => (<SearchContainer {...props} user={props.user}/> )} />
-        </Switch>
-        </Router>
+            <Logo/>
+            <Navbar logoutUser={props.logoutUser}/>
     </div>
-    )
-        </div>
     )
 };
 
