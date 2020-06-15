@@ -16,8 +16,8 @@ const Menu = (props) => {
                 >_TRACKERBOT
             </div>
         <div>
-        <Navbar/>
         <Router>
+        <Navbar logoutUser={props.logoutUser}/>
             <Switch>
                 <Route exact path="/enter_item" render={ props => (<SearchContainer {...props} user={props.user}/> )} />
         </Switch>

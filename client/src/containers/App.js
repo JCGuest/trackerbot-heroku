@@ -26,6 +26,7 @@ class App extends React.Component {
           <Route exact path="/signup" render={ props => (<Signup {...props} loginUser={this.props.loginUser} loggedInStatus={this.props.isLoggedIn}/> )} />
           <Route exact path="/menu" render={ props => (<Menu {...props} user={this.props.user} loggedInStatus={this.props.isLoggedIn} logoutUser={this.props.logoutUser}  /> )} />
           <Route exact path="/enter_item" render={ props => (<SearchContainer {...props} user={this.props.user}/> )} />
+          
        </Switch>
     </Router>
     </div>
