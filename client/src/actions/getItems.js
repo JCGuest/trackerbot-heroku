@@ -1,14 +1,12 @@
 import axios from 'axios';
 
 export const getItems = (userId) => {
-    // debugger
+    console.log(userId)
     return (dispatch) => {
-        dispatch({type: "LOADING_ITEMS"})
-        axios.get(`https://localhost:3001/users/${userId}/items`, {withCredentials:true}).then(resp =>
-            {return resp.json()}
-        )
+        return axios.get(`http://localhost:3001/users/${userId}/items`, {withCredentials:true})
         .then(json => {
             if (json.data.logged_in) {
+                console.log('getItems')
                 dispatch({type: "ADD_ITEMS", items: json.data.items, loading: false })
             } else {
                 dispatch({type: "LOG_OUT", isLoggedIn: false, user: {}})

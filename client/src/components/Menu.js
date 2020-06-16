@@ -1,9 +1,5 @@
 import React from 'react';
-// import Login from '../components/Login';
-// import Home from '../components/Home';
-// import Signup from '../components/Signup';
 import Navbar from '../components/Navbar';
-// import SearchContainer from '../containers/SearchContainer'
 import '../styles/login.css';
 import Logo from './Logo'
 

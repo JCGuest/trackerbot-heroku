@@ -1,4 +1,4 @@
-export default function usersReducer( state = { isLoggedIn: false, user: {}, loading: false, items: {}}, action) {
+export default function usersReducer( state = { isLoggedIn: false, user: {}, loading: false, items: []}, action) {
     // debugger
     switch (action.type) {
         case "LOADING_STATUS":
