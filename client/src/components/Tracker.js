@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 
 
-export default class TrackerContainer extends React.Component {
+export default class Tracker extends React.Component {
     // constructor(props) {
     //     super(props);
     //     // this.state = {
@@ -15,8 +15,6 @@ export default class TrackerContainer extends React.Component {
 
     componentDidMount() {
         const userId = this.props.user.id
-
-        console.log(userId)
         axios.get(`http://localhost:3001/users/${userId}/items`, {withCredentials:true})
         .then(json => {
             if (json.data.logged_in) {
@@ -26,18 +24,23 @@ export default class TrackerContainer extends React.Component {
             }
         })
         .catch(error => console.log('api errors:', error))
+    };
+
+    handleChange = e => {
+        console.log(e.target.value)
     }
 
     render() {
         return (
-            <div>
+            <main>
                 <Logo/>
                 <Navbar/>
-                <div className='logo'>
-                    TrackerContainer <br></br>
-                    {typeof(this.props.items)}
-                </div>
-            </div>
+                <form>
+                    <div className='field'>
+                        <input type='text' name='search' className='input' placeholder='what is it now?' onChange={this.handleChange}/>
+                    </div>
+                </form>
+            </main>
         )
     }
 };

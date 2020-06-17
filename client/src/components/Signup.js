@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/login.css';
 import axios from 'axios';
+import Logo from './Logo'
  
 export default class Signup extends React.Component {
 
@@ -63,10 +64,7 @@ export default class Signup extends React.Component {
     render() {
         return (
         <main>
-            <div className='logo'>
-                <h4>{'>_TRACKERBOT'}</h4>
-            </div>
-
+            <Logo/>
 	        <form onSubmit={this.handleSubmit}>
                 <div className='field'>
                     <input type="text" name="username" className="input"

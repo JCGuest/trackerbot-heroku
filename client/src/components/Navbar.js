@@ -14,7 +14,6 @@ class Navbar extends React.Component {
         {withCredentials: true})
         .then(this.props.logoutUser(false, {}))
     };
-// debugger
     render() {
     return (
         <div>
