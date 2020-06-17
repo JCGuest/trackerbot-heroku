@@ -5,12 +5,12 @@ import Logo from './Logo'
 
 const Home = () => {
     return (
-        <div className='homediv'>
-            <Logo/>
-            <div className='menu'>
-                <NavLink to='/login'><button className='loginbtn'>login</button></NavLink>
-                <NavLink to='/signup'><button className='signupbtn'>signup</button></NavLink>
-            </div>
+        <div className='home'>
+                <Logo/>
+                <div className='menu'>
+                    <NavLink to='/login'><button className='loginbtn'>login</button></NavLink>
+                    <NavLink to='/signup'><button className='signupbtn'>signup</button></NavLink>
+                </div>
         </div>
     )
 };

@@ -6,7 +6,7 @@ import Logo from './Logo'
 const Menu = (props) => {
 // debugger 
     return (
-        <div>
+        <div className='menu'>
             <Logo/>
             <Navbar logoutUser={props.logoutUser}/>
     </div>

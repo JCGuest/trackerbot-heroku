@@ -86,10 +86,6 @@ export default class Login extends React.Component {
                 </div>
                 <button type='submit'>Login</button>
             </form>
-
-            <div>
-            <Link to='/signup'>sign up</Link>
-          </div>
           <div>
           {this.state.errors ? this.handleErrors() : null}
         </div>
