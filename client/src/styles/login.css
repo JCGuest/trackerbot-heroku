@@ -78,15 +78,9 @@ button {
     border: none;
     margin-top: 3rem;
     margin-right: 6%;
-    /* margin-left: ; */
+    margin-bottom: 2rem;
     font-family: 'Courier New', Courier, monospace;
-    /* color: black;
-    background-color: #d16dff;
-    font-weight: bold;
-    border-radius: 4px;
-    /* border: none; */
-    margin-top: 3rem;
-    /* margin-right: 100%; */
+ 
 
 }
 
@@ -108,8 +102,9 @@ button {
   border-bottom: 2px yellowgreen;
   height: 20px;
   font-family: 'Courier New', Courier, monospace;
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 1.2rem;
+  margin-bottom: 3rem;
 }
 
 .text {
@@ -150,4 +145,28 @@ span {
 main {
     display: inline-block;
     text-align: center;
+}
+
+.addItem {
+    display: inline-block
+}
+
+.error-div {
+    text-align: left;
+    margin-top: 2rem;
+    margin-top: 2rem;
+
+}
+
+.error {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: yellowgreen;
+}
+
+.ask {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: yellowgreen;
+    padding-top: 10px;
 }

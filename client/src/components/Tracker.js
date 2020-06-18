@@ -37,7 +37,7 @@ export default class Tracker extends React.Component {
                 <Navbar/>
                 <form>
                     <div className='field'>
-                        <input type='text' name='search' className='input' placeholder='what is it now?' onChange={this.handleChange}/>
+                        <input type='text' name='search' className='input' placeholder='enter your search here' onChange={this.handleChange}/>
                     </div>
                 </form>
             </main>
