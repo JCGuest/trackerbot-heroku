@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/login.css'
 
+
 class ItemList extends React.Component {
    constructor(props) {
        super(props);
@@ -10,12 +11,20 @@ class ItemList extends React.Component {
            ]
        }
    }
+
+   speak = (msg) => {
+    const speek = new SpeechSynthesisUtterance(`${msg}`);
+    window.speechSynthesis.speak(msg);
+   }
+
+
     render() {
+        
         return (
             <div className='error'>
                 <br></br>
                 {this.state.items.map( item => {
-                    return 
+                    return <p>{item.name}</p>
                 })}
             </div>
         )
