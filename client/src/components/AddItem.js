@@ -20,7 +20,6 @@ class AddItem extends React.Component {
         this.setState({
             [name]: value
         })
-        console.log(this.state)
     };
 
     handleSubmit = (e) => {
@@ -42,7 +41,7 @@ class AddItem extends React.Component {
             if (json.data.logged_in) {
                 this.setState({
                     ...this.state,
-                    message: ` saved name=${json.data.item.name}  location=${json.data.item.location} to database`,
+                    message: ` saved name="${json.data.item.name}"  location="${json.data.item.location}" to database`,
                     errors: ''
                 })
             } else {

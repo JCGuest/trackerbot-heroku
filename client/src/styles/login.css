@@ -102,9 +102,9 @@ button {
   border-bottom: 2px yellowgreen;
   height: 20px;
   font-family: 'Courier New', Courier, monospace;
-  margin-top: 4rem;
+  margin-top: 2rem;
   font-size: 1.2rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 2rem; */
 }
 
 .text {
@@ -152,7 +152,7 @@ main {
 
 .error-div {
     text-align: left;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-top: 2rem;
 
 }
