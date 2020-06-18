@@ -25,10 +25,10 @@ class AddItem extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // const { name, location } = this.state
+        const { name, location } = this.state
         let item = {
-            name: this.state.name,
-            location: this.state.location
+            name: name,
+            location: location
         }
         // let axiosConfig = {
         //     headers: {
@@ -42,7 +42,8 @@ class AddItem extends React.Component {
             if (json.data.logged_in) {
                 this.setState({
                     ...this.state,
-                    message: ` saved name=${json.data.item.name}  location=${json.data.item.location} to database`
+                    message: ` saved name=${json.data.item.name}  location=${json.data.item.location} to database`,
+                    errors: ''
                 })
             } else {
                 this.setState({
