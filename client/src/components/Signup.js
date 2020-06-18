@@ -84,7 +84,7 @@ export default class Signup extends React.Component {
                     placeholder="Password Confirmation"
                     onChange={this.handleChange}/> 
                 </div>
-                <button type='submit'>Sign Up</button>
+                <button type='submit'>sign up</button>
             </form>
             <div>
                 {this.state.errors? this.handleErrors() : null}

@@ -81,7 +81,7 @@ export default class Login extends React.Component {
                     className="input" placeholder="Password"
                     onChange={this.handleChange}/> 
                 </div>
-                <button type='submit'>Login</button>
+                <button type='submit'>login</button>
             </form>
           <div>
           {this.state.errors ? this.handleErrors() : null}
