@@ -1,8 +1,8 @@
 import React from 'react'
 // import '../styles/login.css'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import { NavLink } from 'react-router-dom';
  
 export default class Login extends React.Component {
 
@@ -10,7 +10,6 @@ export default class Login extends React.Component {
         super(props);
         this.state = {
             username: '',
-            email: '',
             password: '',
             errors: ''
         }
@@ -25,10 +24,9 @@ export default class Login extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        const {username, email, password} = this.state
+        const {username, password} = this.state
         let user = {
             username: username,
-            email: email,
             password: password
             }
         axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
@@ -39,6 +37,7 @@ export default class Login extends React.Component {
             } else {
                 this.setState({
                   errors: resp.data.errors
+
                 })
             }
         })
@@ -51,13 +50,16 @@ export default class Login extends React.Component {
 
     handleErrors = () => {
         return (
-            <div>
-                <ul>
-                    {this.state.errors.map(error => {
-                        return <li key={error}>{error}</li>
-                    })}
-                </ul>
-            </div>
+            <div className='error-div'>
+              {this.state.errors.map(error => {
+                  return (
+                  <text className='error' key={error}>ERROR: {error}{<br></br>}</text>
+                  ) 
+              })}
+                <text className='ask'>
+                    do you have have an account? click to <NavLink to='/signup'>sign up</NavLink>
+                </text>
+          </div>
         )
     };
 
@@ -73,11 +75,6 @@ export default class Login extends React.Component {
                     onChange={this.handleChange}/>
                 </div>
             
-                <div className="field">
-                    <input type="email" name="email" 
-                    className="input" placeholder='Email'
-                    onChange={this.handleChange}/>
-                </div>
 
                 <div className="field">
                     <input type="password" name="password"

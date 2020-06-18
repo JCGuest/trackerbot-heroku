@@ -8,5 +8,5 @@
 
 --REACT
 - client side routing, /login, /user/:user_id, /trackerbot
-- Components - login, trackerbot,
-            
+- Components - login, tracker, sign up, items list,  
+- 
