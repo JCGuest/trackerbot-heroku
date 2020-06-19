@@ -1,13 +1,12 @@
-# README
+# >_trackerbot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+* Prerequisites
+    ruby 2.6.5
+    rails (~> 5.2.4, >= 5.2.4.2)
+    BUNDLED WITH 2.1.2
 
 * System dependencies
+
 
 * Configuration
 
@@ -21,4 +20,5 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* License
+    This project is licensed under the MIT License - see the LICENSE.md file for details
