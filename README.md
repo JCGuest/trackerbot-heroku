@@ -8,7 +8,7 @@ rails (~> 5.2.4, >= 5.2.4.2)
 BUNDLED WITH 2.1.2
 
 ### Deployment instructions
-This git repo is designed to be deployed using the 'foreman' gem. After you clone and cd into the top level you can run `rake start`. This initiates comands in 'Procfile' that start the Rails server and deploy the React app as a proxy for the Rails API. It is not a true API in that it uses cookies for 'sessions_controller.rb' to login and validate users.
+This git repo is designed to be deployed using the 'foreman' gem. In the top level directory you can run `rake start`. This initiates comands in 'Procfile' that start the Rails server and deploy the React app as a proxy for the Rails API. It is not a true API in that it uses cookies for 'sessions_controller.rb' to login and validate users.
 
 ### License
 This project is licensed under the MIT License - see the LICENSE.md file for details
