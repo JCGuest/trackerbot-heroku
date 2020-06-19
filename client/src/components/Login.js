@@ -53,12 +53,12 @@ export default class Login extends React.Component {
             <div className='error-div'>
               {this.state.errors.map(error => {
                   return (
-                  <text className='error' key={error}>ERROR: {error}{<br></br>}</text>
+                  <p className='error' key={error}>ERROR: {error}{<br></br>}</p>
                   ) 
               })}
-                <text className='ask'>
+                <p className='ask'>
                     do you have have an account? click to <NavLink to='/signup'>sign up</NavLink>
-                </text>
+                </p>
           </div>
         )
     };
