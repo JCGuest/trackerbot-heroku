@@ -7,8 +7,9 @@ const Home = () => {
     return (
         <div className='home'>
                 <Logo/>
-                <div className='menu'>
+                <div className='error'>
                     <NavLink to='/login'><button className='loginbtn'>login</button></NavLink>
+                    {'  \\  '}
                     <NavLink to='/signup'><button className='signupbtn'>signup</button></NavLink>
                 </div>
         </div>

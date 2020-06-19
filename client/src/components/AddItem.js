@@ -34,7 +34,7 @@ class AddItem extends React.Component {
             if (json.data.logged_in) {
                 this.setState({
                     ...this.state,
-                    message: ` saved name="${json.data.item.name}"  location="${json.data.item.location}" to database`,
+                    message: ` confirm: name="${json.data.item.name}"  location="${json.data.item.location}"`,
                     errors: ''
                 })
                 this.speak(json.data.item.name, json.data.item.location)
@@ -58,7 +58,7 @@ class AddItem extends React.Component {
             <div className='error-div'>
               {this.state.errors.map(error => {
                   return (
-                  <text className='error' key={error}>ERROR: {error}{<br></br>}</text>
+                  <p className='error' key={error}>ERROR: {error}{<br></br>}</p>
                   ) 
               })};
           </div>
@@ -74,7 +74,7 @@ class AddItem extends React.Component {
     handleMessage = () => {
         return (
             <div className='error-div'>
-                <text className='error' >{this.state.message}{<br></br>}</text>
+                <p className='error' >{this.state.message}{<br></br>}</p>
             </div>
             )
     };
