@@ -71,14 +71,14 @@ export default class Login extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <div className="field">
                     <input type="text" name="username" 
-                    className="input" placeholder='Username'
+                    className="input" placeholder='username'
                     onChange={this.handleChange}/>
                 </div>
             
 
                 <div className="field">
                     <input type="password" name="password"
-                    className="input" placeholder="Password"
+                    className="input" placeholder="password"
                     onChange={this.handleChange}/> 
                 </div>
                 <button type='submit'>login</button>

@@ -4,27 +4,23 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../styles/login.css'
 
-class Navbar extends React.Component {
-    constructor(props) {
-        super();
-    }
+const Navbar = (props) => {
 
-    logout = () => {
+    function logout() {
         axios.post('http://localhost:3001/logout', {}, 
         {withCredentials: true})
-        .then(this.props.logoutUser(false, {}))
+        .then(props.logoutUser(false, {}))
     };
-    render() {
+
     return (
         <div>
             <div className='navbar'>
                 <NavLink to='/tracker'><span className='text'>:find item</span></NavLink>
                 <NavLink to='/add_item'><span className='text' >:enter item</span></NavLink>
-                <NavLink to='/' onClick={this.logout} exact><span className='text'>:logout</span></NavLink>
+                <NavLink to='/' onClick={() => logout()} exact><span className='text'>:logout</span></NavLink>
             </div>
         </div>
         )
-    }
 };
 
 

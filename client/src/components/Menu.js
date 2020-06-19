@@ -4,7 +4,6 @@ import '../styles/login.css';
 import Logo from './Logo'
 
 const Menu = (props) => {
-// debugger 
     return (
         <div className='menu'>
             <Logo/>
