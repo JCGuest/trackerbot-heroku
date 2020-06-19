@@ -4,9 +4,6 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 import {Route, BrowserRouter as Router, Link} from 'react-router-dom';
 import ItemList from './ItemList';
-import LocList from './LocList';
-import binarySearch from '../actions/search';
-
 
 export default class Tracker extends React.Component {
     constructor(props) {
@@ -54,18 +51,46 @@ export default class Tracker extends React.Component {
         const locationArray = this.props.items.map( item => {
             return item.location
         })
-        // debugger
             this.setState({
                 ...this.state,
                 result: locationArray[i]
             })
+            if (nameArray[i] && locationArray[i]) {
+                this.speak(nameArray[i], locationArray[i])
+                this.setState({
+                    ...this.state,
+                    message: `user_item ${i+1}: name:"${nameArray[i]}" location:"${locationArray[i]}"`
+                })
+            }  else {
+                this.setState({
+                    ...this.state,
+                    message: `no results found for item:"${this.state.searchTerm}"`
+                })
+            }
+    };
+
+    speak(name, location) {
+        var msg = `the location you gave for item ${name} is ${location}`
+        const speek = new SpeechSynthesisUtterance(msg);
+        window.speechSynthesis.speak(speek);
     }
+
+    handleMessage = () => {
+        return (
+            <div className='error-div'>
+                <p className='error' >{this.state.message}{<br></br>}</p>
+            </div>
+            )
+    };
 
     render() {
         return (
             <main>
                 <Logo/>
                 <Navbar/>
+                <div className='message'>
+                    {this.state.message? this.handleMessage() : null}
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className='field'>
                         <input type='text' name='search' className='input' placeholder='enter your search here' value={this.state.searchTerm} onChange={this.handleChange}/>
@@ -76,8 +101,6 @@ export default class Tracker extends React.Component {
                     <span className='error'>view  </span>   
                     <Router>
                         <Link to='/your_items'><span className='text'>:your items</span></Link>
-                        <Link to='/your_locations'><span className='text'>:your locations</span></Link>
-                        <Route exact path="/your_locations" render={ props => (<LocList {...props} user={this.props.user} items={this.props.items} /> )} />
                         <Route exact path="/your_items" render={ props => (<ItemList {...props} user={this.props.user} items={this.props.items} /> )} />
                     </Router>
                 </div>
