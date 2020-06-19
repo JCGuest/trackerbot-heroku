@@ -19,7 +19,10 @@
 * Services (job queues, cache servers, search engines, etc.)
 
 # Deployment instructions
-    Run this command in the top level directory
-    `rake start`
+    Run this command in the top level directory 
+    ```
+    rake start
+    ```
+
 # License
 This project is licensed under the MIT License - see the LICENSE.md file for details
