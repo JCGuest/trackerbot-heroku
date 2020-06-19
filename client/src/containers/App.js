@@ -6,7 +6,6 @@ import Signup from '../components/Signup';
 import Menu from '../components/Menu';
 import Tracker from "../components/Tracker"
 import AddItem from "../components/AddItem";
-import LocList from '../components/LocList';
 import { getLoginStatus } from '../actions/getLoginStatus';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
