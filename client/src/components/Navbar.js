@@ -18,9 +18,9 @@ class Navbar extends React.Component {
     return (
         <div>
             <div className='navbar'>
-                <NavLink to='/tracker'><span className='text'>find item</span></NavLink>
-                <NavLink to='/add_item'><span className='text' >enter item</span></NavLink>
-                <NavLink to='/' onClick={this.logout} exact><span className='text'>logout</span></NavLink>
+                <NavLink to='/tracker'><span className='text'>:find item</span></NavLink>
+                <NavLink to='/add_item'><span className='text' >:enter item</span></NavLink>
+                <NavLink to='/' onClick={this.logout} exact><span className='text'>:logout</span></NavLink>
             </div>
         </div>
         )

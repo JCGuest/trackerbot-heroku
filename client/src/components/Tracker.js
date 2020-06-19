@@ -57,15 +57,13 @@ export default class Tracker extends React.Component {
                     <div className='field'>
                         <input type='text' name='search' className='input' placeholder='enter your search here' onChange={this.handleChange}/>
                     </div>
+                    <button className='error'>submit search ></button>
                 </form>
-                <div className='error'>
-                    <br></br>
-                    {'choose a catagory to expand >>'}
-                </div>
-                <div className='navbar'>    
+                <div className='navbar'> 
+                    <span className='error'>view  </span>   
                     <Router>
-                        <Link to='/your_items'><span className='text'>your items</span></Link>
-                        <Link to='/your_locations'><span className='text'>your locations</span></Link>
+                        <Link to='/your_items'><span className='text'>:your items</span></Link>
+                        <Link to='/your_locations'><span className='text'>:your locations</span></Link>
                         <Route exact path="/your_locations" render={ props => (<LocList {...props} user={this.props.user} items={this.props.items} /> )} />
                         <Route exact path="/your_items" render={ props => (<ItemList {...props} user={this.props.user} items={this.props.items} /> )} />
                     </Router>

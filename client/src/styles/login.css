@@ -76,9 +76,9 @@ button {
     font-weight: bold;
     /* border-radius: 4px; */
     border: none;
-    margin-top: 3rem;
-    margin-right: 6%;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-right: 2%;
+    margin-bottom: 1rem;
     font-family: 'Courier New', Courier, monospace;
  
 
@@ -144,6 +144,7 @@ span {
 main {
     display: inline-block;
     text-align: center;
+    word-wrap: break-word;
 }
 
 .addItem {
@@ -154,7 +155,6 @@ main {
     text-align: left;
     margin-top: 4rem;
     margin-top: 2rem;
-
 }
 
 .error {
