@@ -5,6 +5,7 @@ import axios from 'axios'
 import {Route, BrowserRouter as Router, Link} from 'react-router-dom';
 import ItemList from './ItemList';
 import LocList from './LocList';
+import binarySearch from '../actions/search';
 
 
 export default class Tracker extends React.Component {
@@ -14,7 +15,8 @@ export default class Tracker extends React.Component {
             searchTerm: '',
             user: props.user,
             message: '',
-            errors: ''
+            errors: '',
+            result: ''
         }
     }
 
@@ -45,7 +47,18 @@ export default class Tracker extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
+        const nameArray = this.props.items.map( item => {
+            return item.name
+        })
+        let i = nameArray.indexOf(this.state.searchTerm)
+        const locationArray = this.props.items.map( item => {
+            return item.location
+        })
+        // debugger
+            this.setState({
+                ...this.state,
+                result: locationArray[i]
+            })
     }
 
     render() {
@@ -55,9 +68,9 @@ export default class Tracker extends React.Component {
                 <Navbar/>
                 <form onSubmit={this.handleSubmit}>
                     <div className='field'>
-                        <input type='text' name='search' className='input' placeholder='enter your search here' onChange={this.handleChange}/>
+                        <input type='text' name='search' className='input' placeholder='enter your search here' value={this.state.searchTerm} onChange={this.handleChange}/>
                     </div>
-                    <button className='error'>submit search ></button>
+                    <button className='error'>{'submit search >'}</button>
                 </form>
                 <div className='navbar'> 
                     <span className='error'>view  </span>   

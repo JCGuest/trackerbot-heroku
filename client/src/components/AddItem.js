@@ -29,13 +29,6 @@ class AddItem extends React.Component {
             name: name,
             location: location
         }
-        // let axiosConfig = {
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=UTF-8',
-        //         "Access-Control-Allow-Origin": "*",
-        //     }
-        //   };
-        // debugger
         axios.post(`http://localhost:3001/users/${this.props.user.id}/items`, {item}, {withCredentials:true})
         .then(json => {
             if (json.data.logged_in) {
@@ -44,6 +37,7 @@ class AddItem extends React.Component {
                     message: ` saved name="${json.data.item.name}"  location="${json.data.item.location}" to database`,
                     errors: ''
                 })
+                this.speak(json.data.item.name, json.data.item.location)
             } else {
                 this.setState({
                     ...this.state,
@@ -52,6 +46,11 @@ class AddItem extends React.Component {
             }
         })
         .catch(error => console.log('api errors:', error))
+        this.setState({
+            ...this.state,
+            name: '',
+            location: ''
+        })
     };
 
     handleErrors = () => {
@@ -66,10 +65,16 @@ class AddItem extends React.Component {
         )
     };
 
+    speak = (name, location) => {
+        var msg = `item ${name} saved to location ${location}`
+        const speek = new SpeechSynthesisUtterance(msg);
+        window.speechSynthesis.speak(speek);
+    }
+
     handleMessage = () => {
         return (
             <div className='error-div'>
-                <text className='error' >CONFIRMATION: {this.state.message}{<br></br>}</text>
+                <text className='error' >{this.state.message}{<br></br>}</text>
             </div>
             )
     };
@@ -86,14 +91,16 @@ class AddItem extends React.Component {
                     <div className='field'>
                         <input onChange={this.handleChange}
                         type='text' name='name' className='input'
-                        placeholder='add item name'/>
+                        placeholder='add item name'
+                        value={this.state.name}/>
                     </div>
                     <div className='field'>
                             <input onChange={this.handleChange}
                         type='text' name='location' className='input'
-                        placeholder='add item location'/>
+                        placeholder='add item location'
+                        value={this.state.location}/>
                     </div>
-                    <button type="submit" className='text'>next ></button>
+                    <button type="submit" className='text'>{'next >'}</button>
                 </form>
                 <div>
                     {this.state.errors? this.handleErrors() : null}
