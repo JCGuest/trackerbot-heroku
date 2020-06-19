@@ -3,7 +3,7 @@
 This is a tool for keeping track of where you leave those little things that you don't use very often. It's a very simple interface that was a lot of fun to build. I designed it to look like an early and simple user interface of the 80's and to accomplish a very simple task. It is a Rails API style server for a React app that lives in the '/client' directory.  
 
 ### Prerequisites
-<br>ruby 2.6.5
+ruby 2.6.5
 <br>rails (~> 5.2.4, >= 5.2.4.2)
 <br>BUNDLED WITH 2.1.2
 
