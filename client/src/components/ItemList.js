@@ -2,20 +2,43 @@ import React from 'react';
 import '../styles/login.css'
 
 
-const ItemList = (props) =>  {
+class ItemList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: ''
+        }
+    }
 
-   function speak(name, location) {
+   speak = (name, location, i) => {
     var msg = `the location you gave for item ${name} is ${location}`
     const speek = new SpeechSynthesisUtterance(msg);
     window.speechSynthesis.speak(speek);
+    this.setState({
+        ...this.state,
+        message: `name:"${name}" location:"${location}"`
+    })
    }
 
+   handleMessage = () => {
     return (
         <div className='error-div'>
-            {props.items.map( item => {
-                return <p className='error'><button onClick={ () => speak(item.name, item.location)}>{item.name}</button></p> })}
+            <p className='error' >{this.state.message}{<br></br>}</p>
         </div>
-    )
+        )
+    };
+
+   render() {
+    return (
+        <div className='error-div'>
+            <div className='message'>
+                    {this.state.message? this.handleMessage() : null}
+            </div>
+            {this.props.items.map( (item, i) => {
+                return <p className='error' key={i}><button onClick={() => this.speak(item.name, item.location, i)}>{item.name}</button></p> })}
+        </div>
+        )
+    }
 };
 
 export default ItemList;
