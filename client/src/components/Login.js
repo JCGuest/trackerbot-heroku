@@ -1,5 +1,4 @@
 import React from 'react'
-// import '../styles/login.css'
 import axios from 'axios'
 import Logo from './Logo'
 import { NavLink } from 'react-router-dom';
@@ -30,13 +29,13 @@ export default class Login extends React.Component {
             password: password
             }
         axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
-        .then(resp => {
-            if (resp.data.logged_in) {
-                this.props.loginUser(true, resp.data.user)
+        .then(json => {
+            if (json.data.logged_in) {
+                this.props.loginUser(true, json.data.user)
                 this.redirect()
             } else {
                 this.setState({
-                  errors: resp.data.errors
+                  errors: json.data.errors
 
                 })
             }

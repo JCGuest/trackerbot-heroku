@@ -16,14 +16,14 @@ export default class Signup extends React.Component {
         }
     };
 
-    handleChange = e => {
+    handleChange = (e) => {
         const {name, value} = e.target
         this.setState({
           [name]: value
         })
       };
 
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
         const {username, password, password_confirmation} = this.state
         let user = {
@@ -32,13 +32,13 @@ export default class Signup extends React.Component {
             password_confirmation: password_confirmation
         }
         axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
-        .then(resp => {
-            if (resp.data.status === 'created') {
-                this.props.loginUser(true, resp.data.user)
+        .then(json => {
+            if (json.data.status === 'created') {
+                this.props.loginUser(true, json.data.user)
                 this.redirect()
             } else {
                 this.setState({
-                    errors: resp.data.errors
+                    errors: json.data.errors
                 })
             }
         })
