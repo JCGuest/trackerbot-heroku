@@ -1,11 +1,13 @@
 import React from 'react';
 import Logo from '../components/Logo';
 import Navbar from '../components/Navbar'
-import axios from 'axios'
+// import axios from 'axios'
 import {Route, BrowserRouter as Router, Link} from 'react-router-dom';
 import ItemList from './ItemList';
+import { fetchItems } from '../actions/fetchItems';
+import { connect } from 'react-redux';
 
-export default class Tracker extends React.Component {
+class Tracker extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,16 +21,17 @@ export default class Tracker extends React.Component {
 
     componentDidMount() {
         const userId = this.props.user.id
-        axios.get(`http://localhost:3001/users/${userId}/items`, {withCredentials:true})
-        .then(json => {
-            if (json.data.logged_in) {
-                this.props.addItems(true, json.data.items)
-            } else {
-                this.props.logoutUser(false, {})
-                this.redirect()
-            }
-        })
-        .catch(error => console.log('api errors:', error))
+        this.props.fetchItems(userId)
+        // axios.get(`http://localhost:3001/users/${userId}/items`, {withCredentials:true})
+        // .then(json => {
+        //     if (json.data.logged_in) {
+        //         this.props.addItems(true, json.data.items)
+        //     } else {
+        //         this.props.logoutUser(false, {})
+        //         this.redirect()
+        //     }
+        // })
+        // .catch(error => console.log('api errors:', error))
     };
 
     redirect = () => {
@@ -108,3 +111,12 @@ export default class Tracker extends React.Component {
         )
     };
 };
+
+const mapDispatchToProps = state => {
+    return {
+        logoutUser: state.logoutUser,
+        items: state.items
+    }
+}
+
+export default connect(mapDispatchToProps, { fetchItems })(Tracker);
