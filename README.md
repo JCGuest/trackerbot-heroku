@@ -6,7 +6,7 @@ Features of this project include...<br>
 client-side routing<br>
 'redux' and 'thunk' to manage and dispatch to state <br>
 Rails session and user authentication via API<br>
-audible user confirmations
+audible user confirmations<br>
 both presentational and function components<br>
 hot reloading deployment of both servers for developement
 
