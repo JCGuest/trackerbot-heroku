@@ -4,11 +4,13 @@ This is a tool for keeping track of where you leave those little things that you
 <br>
 Features of this project include...<br>
 client-side routing<br>
-'redux' and 'thunk' to manage and dispatch to state <br>
+"redux" and "thunk" to manage and dispatch to state <br>
 Rails session and user authentication via API<br>
 audible user confirmations<br>
 both presentational and function components<br>
-hot reloading deployment of both servers for developement
+hot reloading deployment of both servers for developement<br>
+both functional and class components<br>
+"REST-ful" routing
 
 ### Prerequisites
 ruby 2.6.5
