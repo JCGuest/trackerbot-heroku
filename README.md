@@ -7,7 +7,7 @@ client-side routing<br>
 "redux" and "thunk" to manage and dispatch to state <br>
 Rails session and user authentication via API<br>
 audible user confirmations<br>
-both presentational and function components<br>
+both presentational and container components<br>
 hot reloading deployment of both servers for developement<br>
 both functional and class components<br>
 "REST-ful" routing
