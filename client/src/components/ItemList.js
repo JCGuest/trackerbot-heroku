@@ -25,7 +25,8 @@ function ItemList(props) {
                     {message? handleMessage() : null}
             </div>
             {props.items.map( (item, i) => {
-                return <p className='error' key={i}><button onClick={() => {speak(item.name, item.location, i)}}>{item.name}</button></p> })}
+                return <p className='error' key={i}>
+                    <button onClick={() => {speak(item.name, item.location, i)}}>{item.name}</button></p> })}
         </div>
         )
 };
