@@ -18,6 +18,7 @@ class App extends React.Component {
 
   render() {
     const user = this.props.user;
+    const items = this.props.items;
     return (
       <div className='homewrap'>
         <Router>
@@ -25,8 +26,8 @@ class App extends React.Component {
             <Route exact path="/"               render={ props => (<Home     {...props} loggedInStatus={this.props.isLoggedIn}/> )} />
             <Route exact path="/login"          render={ props => (<Login    {...props} loginUser={this.props.loginUser} loggedInStatus={this.props.isLoggedIn} /> )} />
             <Route exact path="/signup"         render={ props => (<Signup   {...props} loginUser={this.props.loginUser} loggedInStatus={this.props.isLoggedIn}/> )} />
-            <Route exact path="/menu"           render={ props => (<Menu     {...props} user={this.props.user} loggedInStatus={this.props.isLoggedIn} logoutUser={this.props.logoutUser}  /> )} />
-            <Route exact path="/tracker"        render={ props => (<Tracker  {...props} user={this.props.user} items={this.props.items} addItems={this.props.addItems} logoutUser={this.props.logoutUser} /> )} />
+            <Route exact path="/menu"           render={ props => (<Menu     {...props} user={user} loggedInStatus={this.props.isLoggedIn} logoutUser={this.props.logoutUser}  /> )} />
+            <Route exact path="/tracker"        render={ props => (<Tracker  {...props} user={user} items={items} addItems={this.props.addItems} logoutUser={this.props.logoutUser} /> )} />
             <Route exact path="/add_item"       render={ props => (<AddItem  {...props} user={user} /> )} />
           </Switch>
         </Router>
