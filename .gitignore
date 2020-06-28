@@ -28,3 +28,4 @@
 /.env
 /NOTES.md
 node_modules
+/client/node_modules
