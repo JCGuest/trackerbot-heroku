@@ -1,5 +1,5 @@
 Arguments: 
-  /home/linuxbrew/.linuxbrew/Cellar/node/13.5.0/bin/node /home/linuxbrew/.linuxbrew/Cellar/yarn/1.21.1/libexec/bin/yarn.js init
+  /home/linuxbrew/.linuxbrew/Cellar/node/13.5.0/bin/node /home/linuxbrew/.linuxbrew/Cellar/yarn/1.21.1/libexec/bin/yarn.js build
 
 PATH: 
   /home/jcguest/.rvm/gems/ruby-2.6.5/bin:/home/jcguest/.rvm/gems/ruby-2.6.5@global/bin:/home/jcguest/.rvm/rubies/ruby-2.6.5/bin:/home/jcguest/.rvm/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/jcguest/.local/bin:/home/jcguest/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/jcguest/.rvm/binexport
@@ -14,20 +14,66 @@ Platform:
   linux x64
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (/home/linuxbrew/.linuxbrew/Cellar/yarn/1.21.1/libexec/lib/cli.js:136925:13)
-      at Interface.emit (events.js:305:20)
-      at Interface._ttyWrite (readline.js:882:16)
-      at ReadStream.onkeypress (readline.js:199:10)
-      at ReadStream.emit (events.js:305:20)
-      at emitKeys (internal/readline/utils.js:439:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1150:36)
-      at ReadStream.emit (events.js:305:20)
-      at addChunk (_stream_readable.js:341:12)
+  SyntaxError: /home/jcguest/trackerbot-heroku/package.json: Unexpected token / in JSON at position 1041
+      at JSON.parse (<anonymous>)
+      at /home/linuxbrew/.linuxbrew/Cellar/yarn/1.21.1/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/linuxbrew/.linuxbrew/Cellar/yarn/1.21.1/libexec/lib/cli.js:310:30)
+      at /home/linuxbrew/.linuxbrew/Cellar/yarn/1.21.1/libexec/lib/cli.js:321:13
 
 npm manifest: 
-  No manifest
+  {
+    "name": "trackerbot-heroku",
+    "version": "1.0.0",
+    "description": "Heroku ready version",
+    "main": "index.js",
+    "repository": "git@github.com:JCGuest/trackerbot-heroku.git",
+    "author": "JCGuest <jcguest90@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+      "@testing-library/jest-dom": "^4.2.4",
+      "@testing-library/react": "^9.5.0",
+      "@testing-library/user-event": "^7.2.1",
+      "axios": "^0.19.2",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "react-redux": "^7.2.0",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "3.4.1",
+      "react-speech": "^1.0.2",
+      "react-speech-to-text": "^1.1.1",
+      "react-svelte": "^1.0.2",
+      "redux": "^4.0.5",
+      "speak-tts": "^2.0.8",
+      "yarn": "^1.22.4"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "scripts": {
+      // "build": "cd client && npm install && npm run build && cd ..",
+      "build": "cd client && npm start && cd ..",
+      "deploy": "cp -a client/build/. public/",
+      "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+    },
+    "engines": {
+      "yarn": "1.22.4",
+      "npm": "6.13.4",
+      "node": "10.21.0"
+    }
+  }
 
 yarn manifest: 
   No manifest
