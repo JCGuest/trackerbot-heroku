@@ -23,8 +23,7 @@
     "react-svelte": "^1.0.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "speak-tts": "^2.0.8",
-    "yarn": "^1.22.4"
+    "speak-tts": "^2.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
