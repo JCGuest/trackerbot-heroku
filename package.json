@@ -1,47 +1,19 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "engines": {
-    "npm": "6.14.4",
-    "node": "10.21.0"
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "react-speech": "^1.0.2",
-    "react-speech-to-text": "^1.1.1",
-    "react-svelte": "^1.0.2",
-    "redux": "^4.0.5",
-    "speak-tts": "^2.0.8",
-    "yarn": "^1.22.4"
-  },
+  "name": "trackerbot-heroku",
+  "version": "1.0.0",
+  "description": "Heroku ready version",
+  "main": "index.js",
+  "repository": "git@github.com:JCGuest/trackerbot-heroku.git",
+  "author": "JCGuest <jcguest90@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "yarn": "1.21.1",
+    "npm": "6.13.4",
+    "node": "13.5.0"
   }
 }

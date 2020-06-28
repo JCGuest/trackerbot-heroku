@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
     @user = User.find_by(id: session[:user_id])
   end
 
+  def fallback_index_html
+    render :file => 'public/index.html'
+  end
+
 end
