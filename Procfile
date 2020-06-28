@@ -1,2 +1,2 @@
-web: cd client && npm run build && cd ..
-api: bundle install && bundle exec rails s -p 3001
+web: cd client && npm run build
+api: bundle exec rails s -p 3001
