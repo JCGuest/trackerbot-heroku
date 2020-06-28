@@ -18,7 +18,6 @@ class App extends React.Component {
 
   render() {
     const user = this.props.user;
-    const items = this.props.items;
     return (
       <div className='homewrap'>
         <Router>
@@ -38,7 +37,7 @@ class App extends React.Component {
 
 };
 
-const mapStateToProps = state => ({isLoggedIn: state.isLoggedIn, user: state.user, items: state.items})
+const mapStateToProps = (state) => { return {isLoggedIn: state.isLoggedIn, user: state.user, items: state.items}}
 
 const mapDispatchToProps = dispatch => ({
   loginUser: (isLoggedIn, user) => dispatch({type: "LOG_IN", isLoggedIn: isLoggedIn, user:user }),
