@@ -31,7 +31,7 @@ export default class Signup extends React.Component {
             password: password,
             password_confirmation: password_confirmation
         }
-        axios.post('/users', {user}, {withCredentials: true})
+        axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
         .then(json => {
             if (json.data.status === 'created') {
                 this.props.loginUser(true, json.data.user)
