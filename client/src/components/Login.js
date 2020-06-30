@@ -28,7 +28,7 @@ export default class Login extends React.Component {
             username: username,
             password: password
             }
-        axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+        axios.post('/login', {user}, {withCredentials: true})
         .then(json => {
             if (json.data.logged_in) {
                 this.props.loginUser(true, json.data.user)
