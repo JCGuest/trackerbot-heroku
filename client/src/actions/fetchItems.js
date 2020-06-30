@@ -7,6 +7,7 @@ export const fetchItems = (userId) => {
         if (json.data.logged_in) {
             dispatch({type: "ADD_ITEMS", isLoggedIn: true, items: json.data.items})
         } else {
+            console.log(json.data)
             dispatch({type: "LOG_OUT", isLoggedIn: false, user: {}})
         }
     })
