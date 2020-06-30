@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
   
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
