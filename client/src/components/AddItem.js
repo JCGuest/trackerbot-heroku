@@ -29,7 +29,7 @@ class AddItem extends React.Component {
             name: name,
             location: location
         }
-        axios.post(`/users/${this.props.user.id}/items`, {item}, {withCredentials:true})
+        axios.post(`http://localhost:3001/users/${this.props.user.id}/items`, {item}, {withCredentials:true})
         .then(json => {
             if (json.data.logged_in) {
                 this.setState({

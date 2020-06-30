@@ -7,7 +7,7 @@ import '../styles/login.css'
 const Navbar = (props) => {
 
     function logout() {
-        axios.post('/logout', {}, 
+        axios.post('http://localhost:3001/logout', {}, 
         {withCredentials: true})
         .then(props.logoutUser(false, {}))
     };

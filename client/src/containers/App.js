@@ -18,7 +18,6 @@ class App extends React.Component {
 
   render() {
     const user = this.props.user;
-    const items = this.props.items;
     return (
       <div className='homewrap'>
         <Router>
@@ -27,7 +26,7 @@ class App extends React.Component {
             <Route exact path="/login"          render={ props => (<Login    {...props} loginUser={this.props.loginUser} loggedInStatus={this.props.isLoggedIn} /> )} />
             <Route exact path="/signup"         render={ props => (<Signup   {...props} loginUser={this.props.loginUser} loggedInStatus={this.props.isLoggedIn}/> )} />
             <Route exact path="/menu"           render={ props => (<Menu     {...props} user={user} loggedInStatus={this.props.isLoggedIn} logoutUser={this.props.logoutUser}  /> )} />
-            <Route exact path="/tracker"        render={ props => (<Tracker  {...props} user={user} items={items} addItems={this.props.addItems} logoutUser={this.props.logoutUser} /> )} />
+            <Route exact path="/tracker"        render={ props => (<Tracker  {...props} addItems={this.props.addItems} logoutUser={this.props.logoutUser} /> )} />
             <Route exact path="/add_item"       render={ props => (<AddItem  {...props} user={user} /> )} />
           </Switch>
         </Router>
@@ -38,7 +37,13 @@ class App extends React.Component {
 
 };
 
-const mapStateToProps = (state) => { return {isLoggedIn: state.isLoggedIn, user: state.user, items: state.items}}
+const mapStateToProps = (state) => { 
+  return {
+    isLoggedIn: state.isLoggedIn,
+    user: state.user,
+    items: state.items
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   loginUser: (isLoggedIn, user) => dispatch({type: "LOG_IN", isLoggedIn: isLoggedIn, user:user }),
