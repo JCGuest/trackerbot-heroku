@@ -75,8 +75,6 @@ class Tracker extends React.Component {
     };
 
     render() {
-        // const userId = this.props.user.id
-        // debugger
         return (
             <main>
                 <Logo/>

@@ -18,7 +18,6 @@ class App extends React.Component {
 
   render() {
     const user = this.props.user;
-    // const items = this.props.items;
     return (
       <div className='homewrap'>
         <Router>
