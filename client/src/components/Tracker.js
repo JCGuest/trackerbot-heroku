@@ -14,7 +14,7 @@ class Tracker extends React.Component {
             user: props.user,
             message: '',
             errors: '',
-            result: ''
+            result: ""
         }
     }
 
@@ -75,6 +75,8 @@ class Tracker extends React.Component {
     };
 
     render() {
+        const user = this.props.user
+        const items = this.props.items
         return (
             <main>
                 <Logo/>
@@ -92,7 +94,7 @@ class Tracker extends React.Component {
                     <span className='error'>view  </span>   
                     <Router>
                         <Link to='/your_items'><span className='text'>:your items</span></Link>
-                        <Route exact path="/your_items" render={ props => (<ItemList {...props} user={this.props.user} items={this.props.items} /> )} />
+                        <Route exact path="/your_items" render={ props => (<ItemList {...props} user={user} items={items} /> )} />
                     </Router>
                 </div>
             </main>
