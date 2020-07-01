@@ -11,15 +11,15 @@ class Tracker extends React.Component {
         super(props);
         this.state = {
             searchTerm: '',
-            user: this.props.user,
+            user: '',
             message: '',
             errors: '',
-            result: ""
+            result: ''
         }
     }
 
     componentDidMount() {
-        this.props.fetchItems(this.state.user.id)
+        this.props.fetchItems(this.props.user.id)
     };
 
     redirect = () => {
