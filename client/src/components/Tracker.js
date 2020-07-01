@@ -81,6 +81,9 @@ class Tracker extends React.Component {
             <main>
                 <Logo/>
                 <Navbar/>
+                <Router>
+                    <Route exact path="/your_items" render={ props => (<ItemList {...props} user={user} items={items} /> )} />
+                </Router>
                 <div className='message'>
                     {this.state.message? this.handleMessage() : null}
                 </div>
@@ -92,10 +95,7 @@ class Tracker extends React.Component {
                 </form>
                 <div className='navbar'> 
                     <span className='error'>view  </span>   
-                    <Router>
-                        <Link to='/your_items'><span className='text'>:your items</span></Link>
-                        <Route exact path="/your_items" render={ props => (<ItemList {...props} user={user} items={items} /> )} />
-                    </Router>
+                    <Link to='/your_items'><span className='text'>:your items</span></Link>
                 </div>
             </main>
         )
