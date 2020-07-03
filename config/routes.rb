@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
+  get '/users/:user_id/items', to: 'items#index'
+
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end
