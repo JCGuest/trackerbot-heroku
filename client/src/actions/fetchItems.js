@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 export const fetchItems = (userId) => {
+    let id = userId
     return (dispatch) => {
-    axios.get(`/users/${userId}/items`, {withCredentials:true})
+        console.log(id)
+    axios.get(`/users/${id}/items`, {withCredentials:true})
     .then(json => {
         if (json.data.logged_in) {
             dispatch({type: "ADD_ITEMS", isLoggedIn: true, items: json.data.items})
